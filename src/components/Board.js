@@ -1,28 +1,34 @@
-const Square = ({value})=>{
+import { useState } from "react"
+import styles from '@/styles/Board.module.css'
+
+const Square = ()=>{
+    const [value , setValue] = useState(null)
     function handleClick(){
-        console.log('clicked!')
+        setValue('X')
     }
     return(
-        <button onClick={handleClick}>{value}</button>
+        <button 
+        className={styles.square}
+        onClick={handleClick}>{value}</button>
     )
 }
 const Board = ()=>{
     return(
-        <div>
-            <div>
-                <Square value={1} />
-                <Square value={2} />
-                <Square value={3} />
+        <div >
+            <div className={styles.boardRow}>
+                <Square />
+                <Square />
+                <Square />
             </div>
-            <div>
-                <Square value={4} />
-                <Square value={5} />
-                <Square value={6} />
+            <div className={styles.boardRow}>
+                <Square />
+                <Square />
+                <Square />
             </div>
-            <div>
-                <Square value={7} />
-                <Square value={8} />
-                <Square value={9} />
+            <div className={styles.boardRow}>
+                <Square />
+                <Square />
+                <Square />
             </div>
         </div>
     );

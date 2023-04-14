@@ -1,0 +1,14 @@
+.boardRow{
+    display: flex;
+    margin: 1px;
+
+}.square{
+    width: 56px;
+    height: 56px;
+    background-color: lightgray;
+    border: 1px solid black;
+    margin: 2px;
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
