@@ -2,21 +2,25 @@ import { useState } from "react"
 import styles from '@/styles/Board.module.css'
 
 const Square = ({value , onSquareClick})=>{
-    // const [value , setValue] = useState(null)
-
     return(
-        <button 
-        className={styles.square}
-        onClick={onSquareClick}
-        >{value}</button>
+        <button className={styles.square} onClick={onSquareClick}>
+            {value}
+        </button>
     )
 }
 const Board = ()=>{
     const [squares , setSquares] = useState(Array(9).fill(null))
+    const [xIsNext , setXIsNext] = useState(true)
     function handleClick(i){
         const nextSquare = squares.slice();
-        nextSquare[i] = 'X';
+        console.log(nextSquare)
+        if(xIsNext){
+            nextSquare[i] = 'X';
+        }else{
+            nextSquare[i] = 'O';
+        }
         setSquares(nextSquare);
+        setXIsNext(!xIsNext);
         console.log(squares);
     }
     return(
