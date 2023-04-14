@@ -21,8 +21,10 @@ function calculateWinner (squares){
     ];
     for (let i=0 ; i<lines.length ; i++){
         const [a,b,c] = lines[i];
-        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
+        if ( squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
             return squares[a];
+        }else if(!squares.includes(null)){
+            return 'Draw';
         }
     }
     return null;
@@ -47,9 +49,12 @@ const Board = ()=>{
     }
     const winner = calculateWinner(squares);
     let status ;
-    if (winner){
+    if (winner === 'X' || winner === 'O'){
         status = "Winner : "+winner;
-    }else{
+    }else if(winner ==='Draw'){
+        status = "Draw!"
+    }
+    else{
         status = "Next Player :"+(xIsNext? 'X':'O');
     }
     const Reset =({handleReset})=>{
