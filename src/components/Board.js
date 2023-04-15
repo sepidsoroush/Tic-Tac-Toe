@@ -1,10 +1,11 @@
 import { useState } from "react"
 import styles from '@/styles/Board.module.css'
+import {ResetIcon} from './Icons'
 
 const Square = ({value , onSquareClick})=>{
     return(
-        <button className={styles.square} onClick={onSquareClick}>
-            {value}
+        <button className={`${styles.square}`} onClick={onSquareClick}>
+            <span className={value ==='X' ? styles.xPlayer : styles.oPlayer}>{value}</span>
         </button>
     )
 }
@@ -21,9 +22,10 @@ function calculateWinner (squares){
     ];
     for (let i=0 ; i<lines.length ; i++){
         const [a,b,c] = lines[i];
-        if ( squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
+        const winnerComb = (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]);
+        if (winnerComb){
             return squares[a];
-        }else if(!squares.includes(null)){
+        }else if(winnerComb && !squares.includes(null)){
             return 'Draw';
         }
     }
@@ -57,10 +59,14 @@ const Board = ()=>{
     else{
         status = "Next Player :"+(xIsNext? 'X':'O');
     }
-    const Reset =({handleReset})=>{
+    const Reset =({})=>{
+        function handleReset(){
+            setSquares(emptyBoard);
+            setXIsNext(true);
+        }
         return(
-            <button onClick={handleReset}>
-                Reset Game
+            <button onClick={handleReset} className={styles.reset}>
+                <ResetIcon  />
             </button>
         )
     }
@@ -93,7 +99,7 @@ const Board = ()=>{
                     <Square value={squares[8]} onSquareClick={()=>handleClick(8)} />
                 </div>
             </div>
-            <div><Reset handleReset={()=>setSquares(emptyBoard)} /></div>
+            <div><Reset /></div>
         </div>
     );
 }

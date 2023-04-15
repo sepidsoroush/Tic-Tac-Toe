@@ -21,9 +21,14 @@
     padding: 0;
     text-align: center;
     position: relative;
-    color: #545454;
     font-size: 32px;
     font-weight: 700;
+}
+.xPlayer{
+    color: #545454;
+}
+.oPlayer{
+    color: #f2ebd2;
 }
 .board{
     width: auto;
@@ -42,4 +47,17 @@
     position: absolute;
     background-color: #09a192;
     z-index: 10;
+}
+.status{
+    font-size: 24px;
+    color: #545454;
+    font-size: 28px;
+    font-weight: 500;
+}
+.reset{
+    border: 0;
+    background-color: transparent;
+    color: #545454;
+    width: 36px;
+    height: 36px;
 }
