@@ -1,5 +1,6 @@
 import { useState } from "react"
 import styles from '@/styles/Board.module.css'
+import Message from "./Message";
 
 const Square = ({value , onSquareClick})=>{
     return(
@@ -67,7 +68,7 @@ const Board = ()=>{
 
     return(
         <div >
-            <div className={styles.status}>{status}</div>
+            <Message value={status} />
             <div>
                 <div className={styles.boardRow}>
                     <Square value={squares[0]} onSquareClick={()=>handleClick(0)} />
