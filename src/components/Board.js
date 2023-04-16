@@ -20,16 +20,21 @@ function calculateWinner (squares){
         [0, 4, 8],
         [2, 4, 6]
     ];
-    for (let i=0 ; i<lines.length ; i++){
-        const [a,b,c] = lines[i];
-        const winnerComb = (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]);
-        if (winnerComb){
+    for (let i = 0; i < lines.length; i++) {
+        const [a, b, c] = lines[i];
+        if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
             return squares[a];
-        }else if(winnerComb && !squares.includes(null)){
-            return 'Draw';
         }
+        // else if(!squares.includes(null)){
+        //     return 'Draw';
+        // }
     }
-    return null;
+    for(let j = 0; j < squares.length; j++) {
+        if (squares[j] == null) {
+          return null;
+        }
+     }
+     return "Draw";
 }
 
 const Board = ()=>{
@@ -62,7 +67,7 @@ const Board = ()=>{
     const Reset =({})=>{
         function handleReset(){
             setSquares(emptyBoard);
-            setXIsNext(true);
+            // setXIsNext(true);
         }
         return(
             <button onClick={handleReset} className={styles.reset}>

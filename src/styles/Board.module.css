@@ -4,20 +4,15 @@
     justify-content: center;
     align-items: center;
 }
-/* .board{
-    background-color: #09a192;
-    border: #11bdac;
-} */
+
 .boardRow{
     display: flex;
-    /* margin: 1px; */
-
-}.square{
+}
+.square{
     width: 56px;
     height: 56px;
     background-color: transparent;
     border: 0;
-    /* margin: 2px; */
     padding: 0;
     text-align: center;
     position: relative;
@@ -30,10 +25,7 @@
 .oPlayer{
     color: #f2ebd2;
 }
-.board{
-    width: auto;
-    margin: 30px 0;
-}
+
 .colBorder{
     width: 4px;
     background-color: #09a192;
@@ -61,3 +53,15 @@
     width: 36px;
     height: 36px;
 }
+.board{
+    margin: 30px 0;
+    animation : grow 1s 1;
+}
+@keyframes grow {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1) ;
+    }
+  } 
