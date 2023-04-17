@@ -1,130 +1,19 @@
-import { useState } from "react"
 import styles from '@/styles/Board.module.css'
-import {ResetIcon} from './Icons'
-// import ScoreBoard from "./ScoreBoard"
+import Square from "./Square"
 
-const Square = ({value , onSquareClick})=>{
-    return(
-        <button className={`${styles.square}`} onClick={onSquareClick}>
-            <span className={value ==='X' ? styles.xPlayer : styles.oPlayer}>{value}</span>
-        </button>
-    )
-}
-function calculateWinner (squares){
-    const lines = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
-    ];
-    for (let i = 0; i < lines.length; i++) {
-        const [a, b, c] = lines[i];
-        if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-            return squares[a];
-        }
-    }
-    for(let j = 0; j < squares.length; j++) {
-        if (squares[j] == null) {
-          return null;
-        }
-     }
-     return "Draw";
-}
-
-const Board = ()=>{
-    const emptyBoard = Array(9).fill(null);
-    const [squares , setSquares] = useState(emptyBoard)
-    const [xIsNext , setXIsNext] = useState(true)
-    // const [scores , setScores] = useState({xScores : 0 , oScores : 0});
-    function handleClick(i){
-        if(squares[i] || calculateWinner(squares)){
-            return;
-        }
-        const nextSquare = squares.slice();
-        if(xIsNext){
-            nextSquare[i] = 'X';
-        }else{
-            nextSquare[i] = 'O';
-        }
-        setSquares(nextSquare);
-        setXIsNext(!xIsNext);
-    }
-    const winner = calculateWinner(squares);
-    let status ;
-    // if (winner) {
-    //     if (winner === 'X' ){
-    //         status = "Winner : "+winner;
-    //         let { xScores } = scores;
-    //         xScores += 1;
-    //         setScores({ ...scores, xScores })
-    //         console.log(scores)
-    //     }else if (winner === 'O'){
-    //         status = "Winner : "+winner;        
-    //         let { oScores } = scores;
-    //         oScores += 1;
-    //         setScores({ ...scores, oScores })
-    //         console.log(scores);
-    //     }else if(winner ==='Draw'){
-    //         status = "Draw!"
-    //     }
-    // }else{
-    //     status = "Next Player :"+(xIsNext? 'X':'O');
-    // }
-    if (winner === 'X' || winner === 'O'){
-        status = "Winner : "+winner;
-    }else if(winner ==='Draw'){
-        status = "Draw!"
-    }
-    else{
-        status = "Next Player :"+(xIsNext? 'X':'O');
-    }
-    const Reset =({})=>{
-        function handleReset(){
-            setSquares(emptyBoard);
-            // setXIsNext(true);
-        }
-        return(
-            <button onClick={handleReset} className={styles.reset}>
-                <ResetIcon  />
-            </button>
-        )
-    }
-
-    return(
-        <div className={styles.container}>
-            <div className={styles.status}>{status}</div>
-            {/* <ScoreBoard scores={scores} /> */}
-            <div className={styles.board}>
-                <div className={styles.boardRow}>
-                    <Square value={squares[0]} onSquareClick={()=>handleClick(0)} />
-                    <span className={styles.colBorder}></span>
-                    <Square value={squares[1]} onSquareClick={()=>handleClick(1)} />
-                    <span className={styles.colBorder}></span>
-                    <Square value={squares[2]} onSquareClick={()=>handleClick(2)} />
-                </div>
-                <div className={styles.rowBorder}></div>
-                <div className={styles.boardRow}>
-                    <Square value={squares[3]} onSquareClick={()=>handleClick(3)} />
-                    <span className={styles.colBorder}></span>
-                    <Square value={squares[4]} onSquareClick={()=>handleClick(4)} />
-                    <span className={styles.colBorder}></span>
-                    <Square value={squares[5]} onSquareClick={()=>handleClick(5)} />
-                </div>
-                <div className={styles.rowBorder}></div>
-                <div className={styles.boardRow}>
-                    <Square value={squares[6]} onSquareClick={()=>handleClick(6)} />
-                    <span className={styles.colBorder}></span>
-                    <Square value={squares[7]} onSquareClick={()=>handleClick(7)} />
-                    <span className={styles.colBorder}></span>
-                    <Square value={squares[8]} onSquareClick={()=>handleClick(8)} />
-                </div>
-            </div>
-            <div><Reset /></div>
-        </div>
-    );
+const Board = (props)=>{
+return(
+    <div className={styles.container}>
+            <Square value={props.value[0]} onClick={()=>props.onClick(0)} />
+            <Square value={props.value[1]} onClick={()=>props.onClick(1)} />
+            <Square value={props.value[2]} onClick={()=>props.onClick(2)} />
+            <Square value={props.value[3]} onClick={()=>props.onClick(3)} />
+            <Square value={props.value[4]} onClick={()=>props.onClick(4)} />
+            <Square value={props.value[5]} onClick={()=>props.onClick(5)} />
+            <Square value={props.value[6]} onClick={()=>props.onClick(6)} />
+            <Square value={props.value[7]} onClick={()=>props.onClick(7)} />
+            <Square value={props.value[8]} onClick={()=>props.onClick(8)} />
+    </div>
+);
 }
 export default Board;
