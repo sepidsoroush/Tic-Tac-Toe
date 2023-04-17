@@ -1,8 +1,8 @@
-const ScoreBoard =(scores) =>{
+const ScoreBoard =(props) =>{
     return(
         <div>
-            <span>X - {scores.xScores}</span>
-            <span>O - {scores.oScores}</span>
+            <span>X - {props.value.xScores}</span>
+            <span>O - {props.value.oScores}</span>
         </div>
     )
 }
