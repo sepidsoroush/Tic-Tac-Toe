@@ -2,6 +2,7 @@ import { useState } from "react"
 import styles from '@/styles/Board.module.css'
 import Board from "./Board"
 import Refresh from "./Refresh";
+import NextRound  from "./NextRound";
 import Message from "./Message";
 import ScoreBoard from "./ScoreBoard";
 
@@ -35,6 +36,7 @@ const Game = ()=>{
     const [squares , setSquares] = useState(emptyBoard)
     const [xIsNext , setXIsNext] = useState(true)
     const [scores , setScores] = useState({xScores : 0 , oScores : 0});
+    
     const handleClick = (i) => {
         if(squares[i] || calculateWinner(squares)){
             return;
@@ -81,6 +83,11 @@ const Game = ()=>{
     const handleReset = ()=>{
         setSquares(emptyBoard);
         setXIsNext(true);
+        setScores({xScores : 0 , oScores : 0});
+    }
+    const handleNext = ()=>{
+        setSquares(emptyBoard);
+        setXIsNext(false);
     }
 
     return(
@@ -88,7 +95,10 @@ const Game = ()=>{
             <Message value={status} />
             <ScoreBoard value={scores} />
             <Board value={squares} onClick={handleClick} />
-            <Refresh onClick={handleReset} />
+            <div>
+                <Refresh onClick={handleReset} />
+                <NextRound onClick={handleNext} />
+            </div>
         </div>
     );
 }
