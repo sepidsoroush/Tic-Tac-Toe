@@ -79,7 +79,7 @@ const Game = ()=>{
         setSquares(emptyBoard);
         setXIsNext(false);
     }
-
+    console.log(squares)
     return(
         <div className={styles.container}>
             <Message value={status} />
