@@ -1,5 +1,5 @@
 import { useState , useEffect } from "react"
-import styles from '@/styles/Board.module.css'
+import styles from '@/styles/Game.module.css'
 import Board from "./Board"
 import Refresh from "./Refresh";
 import NextRound  from "./NextRound";
@@ -85,9 +85,15 @@ const Game = ()=>{
             <Message value={status} />
             <ScoreBoard value={scores} />
             <Board value={squares} onClick={handleClick} />
-            <div>
-                <Refresh onClick={handleReset} />
-                <NextRound onClick={handleNext} />
+            <div className={styles.buttons}>
+                <div className={styles.btn}>
+                    <Refresh onClick={handleReset} />
+                    <span className={styles.label}>Restart Game</span>
+                </div>
+                <div className={styles.btn}>
+                    <NextRound onClick={handleNext} />
+                    <span className={styles.label}>Next Round</span>
+                </div>
             </div>
         </div>
     );

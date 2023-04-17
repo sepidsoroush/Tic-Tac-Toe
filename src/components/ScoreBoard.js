@@ -1,8 +1,10 @@
+import styles from '@/styles/ScoreBoard.module.css'
+
 const ScoreBoard =(props) =>{
     return(
-        <div>
-            <span>X - {props.value.xScores}</span>
-            <span>O - {props.value.oScores}</span>
+        <div className={styles.container}>
+            <span className={styles.xPlayer}>X - {props.value.xScores}</span>
+            <span className={styles.oPlayer}>O - {props.value.oScores}</span>
         </div>
     )
 }

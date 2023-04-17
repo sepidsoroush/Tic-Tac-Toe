@@ -1,0 +1,26 @@
+.xPlayer{
+    color: #545454;
+}
+.oPlayer{
+    color: #f2ebd2;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    /* width: 150px; */
+}
+.btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.label{
+    font-size: 10px;
+    text-align: center;
+    white-space: nowrap;
+    margin-top: 5px;
+} 

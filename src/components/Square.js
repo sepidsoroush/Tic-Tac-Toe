@@ -1,4 +1,4 @@
-import styles from '@/styles/Board.module.css'
+import styles from '@/styles/Square.module.css'
 
 const Square = (props)=>{
     return(

@@ -1,4 +1,4 @@
-import styles from '@/styles/Board.module.css'
+import styles from '@/styles/Message.module.css'
 
 const Message =(props)=>{
     return(
