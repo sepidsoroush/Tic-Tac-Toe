@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState , useEffect } from "react"
 import styles from '@/styles/Board.module.css'
 import Board from "./Board"
 import Refresh from "./Refresh";
@@ -50,27 +50,9 @@ const Game = ()=>{
         setSquares(nextSquare);
         setXIsNext(!xIsNext);
     }
+    
     const winner = calculateWinner(squares);
     let status ;
-    // if (winner) {
-    //     if (winner === 'X' ){
-    //         status = "Winner : "+winner;
-    //         let { xScores } = scores;
-    //         xScores += 1;
-    //         setScores({ ...scores, xScores })
-    //         console.log(scores)
-    //     }else if (winner === 'O'){
-    //         status = "Winner : "+winner;        
-    //         let { oScores } = scores;
-    //         oScores += 1;
-    //         setScores({ ...scores, oScores })
-    //         console.log(scores);
-    //     }else if(winner ==='Draw'){
-    //         status = "Draw!"
-    //     }
-    // }else{
-    //     status = "Next Player :"+(xIsNext? 'X':'O');
-    // }
     if (winner === 'X' || winner === 'O'){
         status = "Winner : "+winner;
     }else if(winner ==='Draw'){
@@ -79,6 +61,14 @@ const Game = ()=>{
     else{
         status = "Next Player :"+(xIsNext? 'X':'O');
     }
+    useEffect(() => {
+        if (winner === "O") {
+          setScores({ ...scores, oScores: scores.oScores + 1 });
+        } else if (winner === "X") {
+          setScores({ ...scores, xScores: scores.xScores + 1 });
+        }
+      }, [winner]);
+
 
     const handleReset = ()=>{
         setSquares(emptyBoard);
