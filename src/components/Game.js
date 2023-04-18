@@ -1,8 +1,6 @@
 import { useState , useEffect } from "react"
-import styles from '@/styles/Game.module.css'
 import Board from "./Board"
-import Refresh from "./Refresh";
-import NextRound  from "./NextRound";
+import Buttons from "./Buttons";
 import Message from "./Message";
 import ScoreBoard from "./ScoreBoard";
 
@@ -79,20 +77,11 @@ const Game = ()=>{
         setXIsNext(false);
     }
     return(
-        <div className={styles.container}>
+        <div>
             <Message value={status} />
             <ScoreBoard value={scores} />
             <Board value={squares} onClick={handleClick} />
-            <div className={styles.buttons}>
-                <div className={styles.btn}>
-                    <Refresh onClick={handleReset} />
-                    <span className={styles.label}>Restart Game</span>
-                </div>
-                <div className={styles.btn}>
-                    <NextRound onClick={handleNext} />
-                    <span className={styles.label}>Next Round</span>
-                </div>
-            </div>
+            <Buttons handleReset={handleReset} handleNext={handleNext} />
         </div>
     );
 }
