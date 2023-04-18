@@ -3,7 +3,9 @@ import Board from "./Board"
 import Buttons from "./Buttons";
 import Message from "./Message";
 import ScoreBoard from "./ScoreBoard";
+import WinnerLine from "./WinnerLine";
 
+let winnerLine ;
 function calculateWinner (squares){
     const lines = [
         [0, 1, 2],
@@ -18,6 +20,7 @@ function calculateWinner (squares){
     for (let i = 0; i < lines.length; i++) {
         const [a, b, c] = lines[i];
         if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+            winnerLine = lines.indexOf(lines[i]);
             return squares[a];
         }
     }
@@ -76,10 +79,12 @@ const Game = ()=>{
         setSquares(emptyBoard);
         setXIsNext(false);
     }
+    
     return(
         <div>
             <Message value={status} />
             <ScoreBoard value={scores} />
+            <WinnerLine value={winnerLine} />
             <Board value={squares} onClick={handleClick} />
             <Buttons handleReset={handleReset} handleNext={handleNext} />
         </div>
