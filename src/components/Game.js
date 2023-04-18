@@ -5,6 +5,7 @@ import Refresh from "./Refresh";
 import NextRound  from "./NextRound";
 import Message from "./Message";
 import ScoreBoard from "./ScoreBoard";
+import {Circle , Cross} from "./Icons";
 
 function calculateWinner (squares){
     const lines = [

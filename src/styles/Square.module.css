@@ -4,16 +4,16 @@
 .oPlayer{
     color: var(--light-beige);
 }
+.playerIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .square{
     width: 56px;
     height: 56px;
     background-color: transparent;
     border: 2px solid var(--light-beige);
-    padding: 0;
-    text-align: center;
-    position: relative;
-    font-size: 32px;
-    font-weight: 700;
 }
 .square:nth-child(1),.square:nth-child(2),.square:nth-child(3){
     border-top: 0;
