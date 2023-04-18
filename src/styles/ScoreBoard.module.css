@@ -8,11 +8,11 @@
 }
 .xPlayer{
     color: var(--dark-gray);
-    font-size: 18px;
+    font-size: 36px;
     font-weight: 600;
 }
 .oPlayer{
     color: var(--light-beige);
-    font-size: 18px;
+    font-size: 36px;
     font-weight: 600;
 }

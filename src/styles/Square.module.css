@@ -1,12 +1,11 @@
-
 .playerIcon{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .square{
-    width: 56px;
-    height: 56px;
+    width: 96px;
+    height: 96px;
     background-color: transparent;
     border: 2px solid var(--light-beige);
 }
@@ -34,7 +33,6 @@
     color: var(--dark-gray);
     stroke-dasharray: 48;
     stroke-dashoffset: 48;
-    transform-origin: 0 0;
     animation: 1s ease normal forwards 1 running stroke;
 }
 
