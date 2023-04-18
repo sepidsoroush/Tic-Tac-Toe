@@ -1,5 +1,5 @@
 .main{
-    background-color: #11bdac;
+    background-color: var(--main-green);
     width: 100vw;
     height: 100vh;
     display: flex;

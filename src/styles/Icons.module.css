@@ -1,7 +1,7 @@
 .icon{
     border: 0;
     background-color: transparent;
-    color: #545454;
+    color: var(--dark-gray);
     width: 30px;
     height: 30px;
 }

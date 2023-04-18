@@ -7,12 +7,12 @@
     margin: 24px 0;
 }
 .xPlayer{
-    color: #545454;
+    color: var(--dark-gray);
     font-size: 18px;
     font-weight: 600;
 }
 .oPlayer{
-    color: #f2ebd2;
+    color: var(--light-beige);
     font-size: 18px;
     font-weight: 600;
 }

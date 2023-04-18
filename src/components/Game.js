@@ -69,7 +69,6 @@ const Game = ()=>{
         }
       }, [winner]);
 
-
     const handleReset = ()=>{
         setSquares(emptyBoard);
         setXIsNext(true);
@@ -79,7 +78,6 @@ const Game = ()=>{
         setSquares(emptyBoard);
         setXIsNext(false);
     }
-    console.log(squares)
     return(
         <div className={styles.container}>
             <Message value={status} />

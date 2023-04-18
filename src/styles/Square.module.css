@@ -1,14 +1,14 @@
 .xPlayer{
-    color: #545454;
+    color: var(--dark-gray);
 }
 .oPlayer{
-    color: #f2ebd2;
+    color: var(--light-beige);
 }
 .square{
     width: 56px;
     height: 56px;
     background-color: transparent;
-    border: 2px solid #f2ebd2;
+    border: 2px solid var(--light-beige);
     padding: 0;
     text-align: center;
     position: relative;
