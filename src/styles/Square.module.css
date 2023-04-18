@@ -8,6 +8,9 @@
     height: 96px;
     background-color: transparent;
     border: 2px solid var(--light-beige);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .square:nth-child(1),.square:nth-child(2),.square:nth-child(3){
     border-top: 0;
@@ -27,6 +30,8 @@
     animation: 1s ease normal forwards 1 running stroke;
     stroke-dasharray: 166;
     stroke-dashoffset: 166;
+    width: 64px;
+    height: 64px;
 }
 
 .xPlayer {
@@ -34,6 +39,8 @@
     stroke-dasharray: 48;
     stroke-dashoffset: 48;
     animation: 1s ease normal forwards 1 running stroke;
+    width : 72px;
+    height: 72px;
 }
 
 @keyframes stroke {
