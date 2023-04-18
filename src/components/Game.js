@@ -74,10 +74,12 @@ const Game = ()=>{
         setSquares(emptyBoard);
         setXIsNext(true);
         setScores({xScores : 0 , oScores : 0});
+        winnerLine = null;
     }
     const handleNext = ()=>{
         setSquares(emptyBoard);
         setXIsNext(false);
+        winnerLine = null;
     }
     
     return(
