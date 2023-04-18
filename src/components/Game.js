@@ -36,6 +36,7 @@ const Game = ()=>{
     const emptyBoard = Array(9).fill(null);
     const [squares , setSquares] = useState(emptyBoard)
     const [xIsNext , setXIsNext] = useState(true)
+    const [turn , setTurn] = useState(true);
     const [scores , setScores] = useState({xScores : 0 , oScores : 0});
     
     const handleClick = (i) => {
@@ -78,7 +79,8 @@ const Game = ()=>{
     }
     const handleNext = ()=>{
         setSquares(emptyBoard);
-        setXIsNext(false);
+        setTurn(!turn);
+        setXIsNext(turn);
         winnerLine = null;
     }
     

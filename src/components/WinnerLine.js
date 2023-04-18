@@ -1,7 +1,6 @@
 import styles from '@/styles/Lines.module.css'
 
 const WinnerLine = (props) => {
-    console.log(props.value , typeof(props.value))
     return(
     <div className={styles.container}>
         <svg height='300' width='300' className={styles.svg}>
