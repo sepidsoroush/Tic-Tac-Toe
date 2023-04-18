@@ -57,7 +57,7 @@ const Game = ()=>{
         status = "Draw!"
     }
     else{
-        status = "Next Player :"+(xIsNext? 'X':'O');
+        status = "Next Player : "+(xIsNext? 'X':'O');
     }
     useEffect(() => {
         if (winner === "O") {
