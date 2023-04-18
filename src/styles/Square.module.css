@@ -1,9 +1,4 @@
-.xPlayer{
-    color: var(--dark-gray);
-}
-.oPlayer{
-    color: var(--light-beige);
-}
+
 .playerIcon{
     display: flex;
     justify-content: center;
@@ -27,3 +22,24 @@
 .square:nth-child(3),.square:nth-child(6),.square:nth-child(9){
     border-right: 0;
 }
+
+.oPlayer {
+    color: var(--light-beige);
+    animation: 1s ease normal forwards 1 running stroke;
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+}
+
+.xPlayer {
+    color: var(--dark-gray);
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    transform-origin: 0 0;
+    animation: 1s ease normal forwards 1 running stroke;
+}
+
+@keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }

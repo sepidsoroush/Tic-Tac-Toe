@@ -4,7 +4,11 @@ import {Circle , Cross} from "./Icons";
 const Square = (props)=>{
     return(
         <button className={styles.square} onClick={props.onClick}>
-            <span className={`${props.value ==='X' ? styles.xPlayer : styles.oPlayer} ${styles.playerIcon}`}>{props.value ==='X' ? <Cross/> : props.value ==='O' ? <Circle/> :null}</span>
+            {props.value ==='X' ? 
+            <span className={`${props.value ==='X' ? styles.xPlayer : styles.oPlayer} ${styles.playerIcon}`}><Cross /></span> 
+            : props.value ==='O' ? 
+            <span className={`${props.value ==='X' ? styles.xPlayer : styles.oPlayer} ${styles.playerIcon}`}><Circle /> </span>
+            :null}
         </button>
     )
 }
