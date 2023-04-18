@@ -4,13 +4,14 @@
     align-items: center;
 }
 .square{
-    width: 96px;
-    height: 96px;
+    min-width: 100px;
+    height: 100px;
     background-color: transparent;
     border: 2px solid var(--light-beige);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
 }
 .square:nth-child(1),.square:nth-child(2),.square:nth-child(3){
     border-top: 0;
