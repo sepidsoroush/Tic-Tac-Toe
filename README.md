@@ -30,3 +30,10 @@ in src:
 ### Deploy on Vercel
 
 I used [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) to deploy my project. Check the live Demo on [Tic Tac Toe](https://tic-tac-toe-sepidev.vercel.app/).
+
+### Screenshots of the Project 📸
+
+<div style="text-align:center;margin:0;">
+    <img src="https://github.com/sepidsoroush/Tic-Tac-Toe/blob/main/public/Tic%20Tac%20Toe.png?raw=true" alt="Screenshot of Tic Tac Toe game"   width="324" height="324">
+</div>
+
